@@ -1,15 +1,15 @@
 package com.iti.service.agreement;
 
-import com.iti.dto.Address;
 import com.iti.dto.AgreementStatus;
 import com.iti.dto.Customer;
 import com.iti.dto.InsuranceType;
+import org.springframework.stereotype.Service;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-
+@Service
 public class SimpleAgreementServiceImpl implements AgreementService {
     @Override
-    public long createCustomer(Customer customer, Address address) {
+    public long createCustomer(Customer customer) {
         throw new NotImplementedException();
     }
 
@@ -19,7 +19,7 @@ public class SimpleAgreementServiceImpl implements AgreementService {
     }
 
     @Override
-    public boolean updateAgreementStatus(long agreementId, AgreementStatus newAgreementStatus) {
+    public void updateAgreementStatus(long agreementId, AgreementStatus newAgreementStatus) {
         throw new NotImplementedException();
     }
 }

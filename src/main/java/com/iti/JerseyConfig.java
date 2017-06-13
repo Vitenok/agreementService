@@ -2,15 +2,17 @@ package com.iti;
 
 import com.iti.controller.AgreementController;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
-public class JerseyConfig  extends ResourceConfig {
-    public JerseyConfig() {
-        registerEndpoints();
-    }
+import javax.annotation.PostConstruct;
+import javax.ws.rs.ApplicationPath;
 
-    private void registerEndpoints() {
-        register(AgreementController.class);
+@Component
+@ApplicationPath("api")
+public class JerseyConfig extends ResourceConfig {
+    @PostConstruct
+    private void init() {
+        registerClasses(AgreementController.class);
+        property(org.glassfish.jersey.server.ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
     }
 }
