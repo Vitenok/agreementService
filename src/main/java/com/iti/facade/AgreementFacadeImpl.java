@@ -62,7 +62,7 @@ public class AgreementFacadeImpl implements AgreementFacade {
             } catch (AgreementStatusException e) {
                 //Possible solutions of collision:
                 //1. Try to update status few more times
-                //2. Try to revert email sending (for ex. use sending delay)
+                //2. Try to revert email sending
                 //3. Try to use different customer notification channels (if any)
                 //4. Notify support to contact AgreementService team for manual status update
                 //5. Notify CEO of AgreementService system
