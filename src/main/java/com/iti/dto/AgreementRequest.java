@@ -2,12 +2,14 @@ package com.iti.dto;
 
 import org.springframework.stereotype.Component;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @Component
 public class AgreementRequest {
 
     @NotNull
+    @Valid
     private Customer customer;
 
     @NotNull
